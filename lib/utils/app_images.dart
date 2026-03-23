@@ -4,7 +4,7 @@ class AppImages {
 
     if (name.contains("cleaning")) return "assets/cleaning.jpg";
     if (name.contains("plumbing")) return "assets/plumber.jpg";
-    if (name.contains("electrician")) return "assets/Electrician.jpg";
+    if (name.contains("electrician")) return "assets/electrician.jpg";
     if (name.contains("car wash")) return "assets/car.jpg";
     if (name.contains("carpenter")) return "assets/carpenter.jpg";
     if (name.contains("gardening")) return "assets/gardening.jpg";

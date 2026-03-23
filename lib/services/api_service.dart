@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  static const baseUrl = "http://10.0.2.2:3000";
+  static const baseUrl = "https://bookquick-backend.onrender.com";
 
   static Future login(String email, String password) async {
     final res = await http.post(
