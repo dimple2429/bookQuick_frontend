@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "297423592320",
+    "project_id": "bookquick-f4a03",
+    "storage_bucket": "bookquick-f4a03.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297423592320:android:e6e9559b8f564263abff65",
+        "android_client_info": {
+          "package_name": "com.example.book_quick"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNeSdr1Aygntuy0IPI2d2-x5qtjyuzYBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
