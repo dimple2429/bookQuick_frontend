@@ -8,18 +8,10 @@ class ServiceDetailScreen extends StatelessWidget {
 
   const ServiceDetailScreen({required this.service});
 
-  String getImage(String serviceName) {
-    if (serviceName.toLowerCase().contains("cleaning")) {
-      return "assets/cleaning.jpg";
-    } else if (serviceName.toLowerCase().contains("plumbing")) {
-      return "assets/plumber.jpg";
-    } else {
-      return "assets/salon.jpg";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       top: true,
       child: Scaffold(
@@ -28,18 +20,19 @@ class ServiceDetailScreen extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(30),
-                  ),
+                  borderRadius: BorderRadius.circular(16),
                   child: Image.asset(
                     AppImages.getServiceImage(service['name']),
-
-                    height: 350,
                     width: double.infinity,
-                    fit: BoxFit.cover,
+                    height: screenWidth > 1200
+                        ? screenWidth * 0.40
+                        : screenWidth > 600
+                        ? screenWidth * 0.40
+                        : screenWidth * 0.55,
+                    fit: screenWidth > 1200 ? BoxFit.fitHeight :
+                    BoxFit.contain,
                   ),
                 ),
-
                 Positioned(
                   top: 40,
                   left: 16,
@@ -65,15 +58,20 @@ class ServiceDetailScreen extends StatelessWidget {
                       children: [
                         Text(
                           service['name'],
-                          style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
 
                         Positioned(
                           top: 40,
                           right: 16,
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 6,
+                            ),
                             decoration: BoxDecoration(
                               color: Color(0xFF5FABBD),
                               borderRadius: BorderRadius.circular(20),
@@ -84,7 +82,6 @@ class ServiceDetailScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-
                       ],
                     ),
 
@@ -125,15 +122,16 @@ class ServiceDetailScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Text("Book Now", style: TextStyle(
-                          color: Colors.white
-                        ),),
+                        child: Text(
+                          "Book Now",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
